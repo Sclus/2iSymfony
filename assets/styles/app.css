@@ -1,3 +1,10 @@
 body {
-    background-color: skyblue;
+    background-color: grey;
+}
+h1 {
+    color: black;
+    font-size: 40px;
+}
+p{
+    color: #e23317;
 }
