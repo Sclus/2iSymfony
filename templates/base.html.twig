@@ -15,12 +15,25 @@
     </head>
     <body>
         {% block body %}
-            <h1>Bienvenido</h1>
+            <h1>Liste des produits</h1>
             <div>
-                <p>Test de texte</p>
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Description</th>
+                        <th>Quantité</th>
+                    </tr>
+                    {% for produit in allProducts %}
+                        <tr>
+                            <td>{{produit.name}}</td>
+                            <td>{{produit.description}}</td>
+                            <td>{{produit.quantity}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
             </div>
             <div>
-                <input type="button" value="Vers les produits" id="toProduct" onclick="window.open('products', '_self')"/>
+                <input type="button" value="Ajouter un produit" onclick="window.open('{{ path('app_products') }}')"/>
             </div>
         {% endblock %}
     </body>
