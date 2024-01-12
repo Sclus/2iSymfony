@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<header>
+{% block header %}
+    <h1 onclick="window.open('{{ path('app_homepage') }}', '_self')">StockTrack</h1>
+
+    {% if app.user is not null %}
+        <div>
+            <label>{{ app.user.email }}</label>
+            <input type="button" value="Logout" onclick="window.open('{{ path('app_logout') }}', '_self')"/>
+        </div>
+    {% else %}
+        <div>
+            <input type="button" value="Login" onclick="window.open('{{ path('app_login') }}', '_self')"/>
+            <input type="button" value="Register" onclick="window.open('{{ path('app_register') }}', '_self')"/>
+        </div>
+    {% endif %}
+
+{% endblock %}
+</header>
+
